@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jordan Costley | Homework 3</title>
+</head>
+<style media="screen">
+    body{text-align: center; font-family: Arial, Helvetica, sans-serif; background-color: lightgray; padding: 50px;}
+</style>
+<body>
+    <h1>Our Team</h1>
+    <p>For more info please select a team member 1-4</p>
+    <input type="text" name="" value="" id="teamNo">
+    <button type="button" name="button" onclick="getTeamMember()">submit</button>
+    <p id="showTeam"></p>
+</body>
+<script type="text/javascript">
+
+    var team = [];
+        team[0] = {firstName:"Jordan", lastName:"Costley", age:"23", hairColor:"Blond", eyeColor:"Brown"};
+        team[1] = {firstName:"Derek", lastName:"Duty", age:"14", hairColor:"Brown", eyeColor:"Pink"};
+        team[2] = {firstName:"Tyler", lastName:"Henn", age:"21", hairColor:"Blond", eyeColor:"Blue"};
+        team[3] = {firstName:"Tyler", lastName:"Ralston", age:"21", hairColor:"Brown", eyeColor:"Brown"};
+        
+
+    function getTeamMember(){
+    var teamMemID = parseInt(document.getElementById('teamNo').value);
+    if(teamMemID<1 || teamMemID>4)
+    {
+    alert("Please read the instructions and enter a valid number...")
+    return false;
+    }
+    teamMemID -=1;
+    
+    var ec = team[teamMemID].eyeColor;
+    var fn = team[teamMemID].firstName;
+    var ln = team[teamMemID].lastName;
+    var age = team[teamMemID].age;
+    var hc = team[teamMemID].hairColor;
+
+    var member = "Team member #" + parseInt(teamMemID + 1) + " is " + fn + "" + ln + ", with " + hc + " hair and " + ec + " eyes.";
+    document.getElementById('showTeam').innerHTML = member; 
+    }
+
+
+    
+</script>
+</html>
